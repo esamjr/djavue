@@ -22,7 +22,7 @@ $ cd djavue
 Install the dependencies
 
 ```
-$ pip install -r requirements.txt
+$ python -m pip install -r requirements.txt
 $ npm install
 ```
 
