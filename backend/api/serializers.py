@@ -11,7 +11,6 @@ class UserSerializer(serializers.HyperlinkedModelSerializer) :
             'url',
             'username',
         ]
-
 class ArticleSerializer(serializers.HyperlinkedModelSerializer) :
     class Meta :
         model  = Article
