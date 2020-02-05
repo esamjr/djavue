@@ -1,0 +1,1 @@
+web: gunicorn pkl_blog.wsgi
