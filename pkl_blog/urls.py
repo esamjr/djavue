@@ -27,9 +27,7 @@ router.register(r'users', views.UserViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
     # Api
     path('api/', include(router.urls)),
-
     path('', article_view.default_view, name = 'default-view'),
 ]
