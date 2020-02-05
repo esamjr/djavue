@@ -8,15 +8,17 @@ class UserSerializer(serializers.HyperlinkedModelSerializer) :
     class Meta :
         model  = User
         fields = [
-            'url',
+            'id',
             'username',
+            'password',
+            'email'
         ]
 class ArticleSerializer(serializers.HyperlinkedModelSerializer) :
     class Meta :
         model  = Article
         fields = [
-            'article_author',
-            'article_title',
-            'article_content',
+            'author',
+            'title',
+            'content',
             'date_posted',
         ]
