@@ -26,7 +26,9 @@ SECRET_KEY = '+tbk32+*%pf&1vrg$8a504k1dc368#l_hcz0hw^)kylt^*t#ge'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+]
 
 
 # Application definition
@@ -39,8 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    # Third Party
+    # Installed apps
     'article.apps.ArticleConfig',
+
+    # third party
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -102,6 +107,12 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSON_CLASSES' : [
+        'rest_framework.permission.DjangoModelPermissionOrAnonReadOnly'
+    ]
+}
 
 
 # Internationalization
