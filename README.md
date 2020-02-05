@@ -1,29 +1,21 @@
-# pkl_blog
+# Django Vue Blog
 
-## Project setup
-```
-npm install
-```
+A blog made with Django, VueJS and sqlite3
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Table Of Content
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- [Getting Started](#getting-started)
+- [Contributing](#contributing)
 
-### Run your tests
-```
-npm run test
+## Getting Started
+
+To get started with the application first you will need to clone this repository or fork it then clone the forked repository
+
+```git
+git clone https://github.com/HotPotatoC/pkl-training.git
+cd pkl-training
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Contributing
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Your contribution is greatly appreciated. Please refer to the [contribution](docs/CONTRIBUTING.md) guide to contribute to this repo.
