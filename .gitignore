@@ -1,2 +1,12 @@
+<<<<<<< HEAD
 *env
 *__pycache__
+=======
+.vscode
+__pycache__
+
+env
+node_modules
+
+.env
+>>>>>>> 237525012eaa12086a7ef1fe8c4fb6a5f385aa42
