@@ -1,8 +1,16 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-import sys, os
+import sys
 sys.path.append('../')
 from article.models import Article
+
+class UserSerializer(serializers.HyperlinkedModelSerializer) :
+    class Meta :
+        model  = User
+        fields = [
+            'url',
+            'username',
+        ]
 
 class ArticleSerializer(serializers.HyperlinkedModelSerializer) :
     class Meta :
