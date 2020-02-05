@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import Post from "@/components/Post";
 
 export default {
@@ -17,6 +18,7 @@ export default {
   },
   data() {
     return {
+      articles: null,
       posts: [
         {
           id: Math.random().toString(36),
@@ -78,6 +80,18 @@ export default {
         }
       ]
     };
+  },
+  created() {
+    this.fetchArticles();
+  },
+  methods: {
+    async fetchArticles() {
+      let endpoint = "https://jsonplaceholder.typicode.com/todos/1";
+
+      let { data } = await axios.get(endpoint);
+      this.articles = data;
+      console.log(this.articles);
+    }
   }
 };
 </script>
