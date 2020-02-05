@@ -1,4 +1,7 @@
-# Django Vue Blog
+![vuelogo](docs/vue.png)
+![django](docs/django.png)
+
+# Djavue Blog
 
 A blog made with Django, VueJS and sqlite3
 
