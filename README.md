@@ -16,6 +16,7 @@ To get started with the application first you will need to clone this repository
 
 ```
 $ git clone https://github.com/HotPotatoC/pkl-training.git
+
 $ cd pkl-training
 ```
 
@@ -23,12 +24,15 @@ Install the dependencies
 
 ```
 $ pip install -r requirements.txt
+
 $ npm install
 ```
 
-Run the vue service
+Run the services
 ```
 $ npm run serve
+
+$ ./runserver 5000
 ```
 
 ## Contributing
