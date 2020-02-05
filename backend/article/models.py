@@ -7,7 +7,7 @@ class Article(models.Model) :
     article_author  = models.ForeignKey(User, on_delete = models.CASCADE)
     article_title   = models.CharField(max_length = 30 )
     article_content = models.TextField()
-    date_posted     = models.DateTimeField(
+    date_posted     = models.TextField(
         default = datetime.datetime.now().strftime("%B, %a %d %Y"))
 
     def __str__(self):
