@@ -4,7 +4,7 @@ A blog made with Django, VueJS and sqlite3
 
 ## Table Of Content
 
-- [Getting Started]`(#getting-started)
+- [Getting Started](#getting-started)
 - [Contributing](#contributing)
 
 ## Getting Started
