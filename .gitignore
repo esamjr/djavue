@@ -1,2 +1,7 @@
-*env
-*__pycache__
+__pycache__
+.vscode
+
+env
+node_modules
+
+.env
