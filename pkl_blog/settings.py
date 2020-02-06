@@ -63,7 +63,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(SETTINGS_PATH, 'dist'),
+            os.path.join(BASE_DIR, 'dist'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -118,12 +118,12 @@ USE_L10N = True
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/dist/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'dist')
+    os.path.join(BASE_DIR, 'dist/static')
 ]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
