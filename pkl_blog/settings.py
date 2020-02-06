@@ -1,3 +1,4 @@
+import django_heroku
 """
 Django settings for pkl_blog project.
 
@@ -111,3 +112,5 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
+
+django_heroku.settings(locals())
