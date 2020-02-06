@@ -9,6 +9,10 @@ We love your input! We want to make contributing to this project as easy and tra
 
 When contributing to this repository, please provide a detailed explanation on your contribution to our repository in your issue.
 
+## Python Code-Style
+
+We follow the pep8 style for our python code. Please refer to the pep8 guideline [here](https://www.python.org/dev/peps/pep-0008/)
+
 ## Pull Requests
 
 To get started on your contribution here are the steps:
