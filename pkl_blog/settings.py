@@ -113,11 +113,12 @@ USE_L10N = True
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/dist/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'dist')
 
-]
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'dist')
+)
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
