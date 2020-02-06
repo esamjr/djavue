@@ -15,24 +15,20 @@ A blog made with Django, VueJS and sqlite3
 To get started with the application first you will need to clone this repository or fork it then clone the forked repository
 
 ```
-$ git clone https://github.com/HotPotatoC/pkl-training.git
-
-$ cd pkl-training
+$ git clone https://github.com/HotPotatoC/djavue.git
+$ cd djavue
 ```
 
 Install the dependencies
 
 ```
-$ pip install -r requirements.txt
-
+$ python -m pip install -r requirements.txt
 $ npm install
 ```
 
-Run the services
+Run the vue service
 ```
 $ npm run serve
-
-$ ./runserver 5000
 ```
 
 ## Contributing
