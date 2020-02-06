@@ -16,7 +16,6 @@ To get started with the application first you will need to clone this repository
 
 ```
 $ git clone https://github.com/HotPotatoC/djavue.git
-
 $ cd djavue
 ```
 
@@ -24,14 +23,12 @@ Install the dependencies
 
 ```
 $ python -m pip install -r requirements.txt
-
 $ npm install
 ```
 
-Run the service
-
+Run the vue service
 ```
-$ ./runserver 5000
+$ npm run serve
 ```
 
 ## Contributing
