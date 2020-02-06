@@ -34,8 +34,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Installed apps
+    # installed app
     'article.apps.ArticleConfig',
+
     # third party
     'rest_framework',
 ]
@@ -72,8 +73,6 @@ WSGI_APPLICATION = 'pkl_blog.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
