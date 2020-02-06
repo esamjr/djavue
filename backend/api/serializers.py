@@ -5,6 +5,16 @@ sys.path.append('../')
 from article.models import Article
 from users.models import Profile
 
+class UserSerializer(serializers.ModelSerializer) :
+    class Meta :
+        model  = User
+        fields = [
+            'id',
+            'email',
+            'username',
+            'date_joined',
+        ]
+
 class ProfileSerializer(serializers.ModelSerializer) :
     class Meta :
         model  = Profile
