@@ -3,21 +3,22 @@ from rest_framework import serializers
 import sys
 sys.path.append('../')
 from article.models import Article
+from users.models import Profile
 
-class UserSerializer(serializers.HyperlinkedModelSerializer) :
+class ProfileSerializer(serializers.ModelSerializer) :
     class Meta :
-        model  = User
+        model  = Profile
         fields = [
             'id',
             'username',
-            'password',
-            'email'
         ]
-class ArticleSerializer(serializers.HyperlinkedModelSerializer) :
+
+class ArticleSerializer(serializers.ModelSerializer) :
     class Meta :
         model  = Article
         fields = [
-            'author',
+            'id',
+            'user',
             'title',
             'content',
             'date_posted',

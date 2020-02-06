@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '+tbk32+*%pf&1vrg$8a504k1dc368#l_hcz0hw^)kylt^*t#ge'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
@@ -36,7 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # installed app
-    'article.apps.ArticleConfig',
+    'article',
+    'users',
 
     # third party
     'rest_framework',
