@@ -4,5 +4,6 @@ sys.path.append('../backend/')
 from api import viewsets
 
 router = routers.DefaultRouter()
-router.register('article', viewsets.ArticleViewSet)
+router.register('users', viewsets.UserViewSet)
 router.register('profile', viewsets.ProfileViewSet)
+router.register('article', viewsets.ArticleViewSet)
