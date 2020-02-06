@@ -11,7 +11,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
-import os, sys
+import os
+import sys
 sys.path.append('backend/')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -57,10 +58,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'pkl_blog.urls'
 
+SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(SETTINGS_PATH, 'dist'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -101,7 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSON_CLASSES' : [
+    'DEFAULT_PERMISSON_CLASSES': [
         'rest_framework.permission.DjangoModelPermissionOrAnonReadOnly'
     ]
 }
