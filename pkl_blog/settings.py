@@ -87,7 +87,8 @@ port     = os.getenv('PORT')
 db       = os.getenv('DB_NAME')
 
 DATABASES    = {}
-DATABASE_URL = 'postgres://{0}:{1}@{2}/{3}'.format(user, password, port, db) or os.getenv('DATABASE_URL')
+DATABASE_URL = os.getenv('DATABASE_URL') or 'postgres://{0}:{1}@{2}/{3}'.format(
+    user, password, port, db)
 DATABASES['default'] = dj_database_url.parse(DATABASE_URL, conn_max_age = None)
 
 # Password validation
