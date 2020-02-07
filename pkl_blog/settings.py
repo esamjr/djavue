@@ -24,7 +24,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = '+tbk32+*%pf&1vrg$8a504k1dc368#l_hcz0hw^)kylt^*t#ge'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv(DEBUG)
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
@@ -81,8 +81,14 @@ WSGI_APPLICATION = 'pkl_blog.wsgi.application'
 
 
 # Database
+user     = os.getenv('USER')
+password = os.getenv('PASSWORD')
+port     = os.getenv('PORT')
+db       = os.getenv('DB_NAME')
+
 DATABASES    = {}
-DATABASE_URL = 'postgres://postgres:postgres@127.0.0.1/restapi_db'
+DATABASE_URL = 'postgres://{0}:{1}@{2}/{3}'.format(
+    user, password, port, db)
 DATABASES['default'] = dj_database_url.parse(DATABASE_URL, conn_max_age = None)
 
 # Password validation
