@@ -16,10 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from .routers import router
-from .default import default_view 
 
 urlpatterns = [
-    path('', default_view, name = ''),
     path('admin/', admin.site.urls),
 
     # Api
