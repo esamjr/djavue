@@ -1,19 +1,19 @@
 <template>
   <div class="w-full md:w-1/2 p-6 m-6 bg-white shadow-md rounded-lg" :class="grid">
-    <img :src="item.image" class="rounded-lg" />
     <h1 class="text-5xl font-bold">
-      <router-link :to="'/post/' + item.id">{{ item.title }}</router-link>
+      <router-link :to="'/post/' + article.id">{{ article.title }}</router-link>
     </h1>
-    <p>{{ item.content }}</p>
+    <p>{{ article.content }}</p>
     <div class="pt-12">
-      <p class="text-gray-600">By {{ item.author }}</p>
+      <p class="text-gray-600">By {{ article.user }}</p>
+      <p class="text-gray-600">{{ article.date_posted }}</p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["grid", "item"]
+  props: ["grid", "article"]
 };
 </script>
 
