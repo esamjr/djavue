@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import sys
+import dj_database_url
 sys.path.append('backend/')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -39,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # installed app
     'article',
-
     # third party
     'rest_framework',
 ]
@@ -81,15 +81,9 @@ WSGI_APPLICATION = 'pkl_blog.wsgi.application'
 
 
 # Database
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'restapi_db',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': '127.0.0.1',
-    }
-}
+DATABASES    = {}
+DATABASE_URL = 'postgres://postgres:postgres@127.0.0.1/restapi_db'
+DATABASES['default'] = dj_database_url.parse(DATABASE_URL, conn_max_age = None)
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
