@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     async fetchArticles() {
-      let endpoint = "http://127.0.0.1:5000/api/articles";
+      let endpoint = "/api/v1/articles";
 
       let { data } = await axios.get(endpoint);
       this.articles = data;
