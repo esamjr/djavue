@@ -6,7 +6,8 @@
     </h1>
     <p>{{ item.content }}</p>
     <div class="pt-12">
-      <p class="text-gray-600">By {{ item.author }}</p>
+      <p class="text-gray-600">By {{ item.user }}</p>
+      <p class="text-gray-600">{{ item.date_posted }}</p>
     </div>
   </div>
 </template>

@@ -45,10 +45,10 @@
 
 <script>
 export default {
-    methods: {
-        addArticle: function() {
-            console.log('check')
-        }
+  methods: {
+    addArticle: function() {
+      console.log("check");
     }
-}
+  }
+};
 </script>
