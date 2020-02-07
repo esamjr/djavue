@@ -3,3 +3,4 @@ djangorestframework
 django-heroku
 gunicorn
 whitenoise
+corsheader

@@ -1,0 +1,805 @@
+[33mcommit 72f7e6aebb2b7e15e0bac659c2fe8bbed21622a6[m[33m ([m[1;36mHEAD -> [m[1;32mdev[m[33m, [m[1;31morigin/dev[m[33m)[m
+Author: HotPotatoC <43059506+HotPotatoC@users.noreply.github.com>
+Date:   Fri Feb 7 14:41:12 2020 +0700
+
+    Revert "Delete & Use | profile-api, use postgres db (#37)" (#38)
+    
+    This reverts commit 9d47e6908b9d71b256a94439d8faa6e5f1445a32.
+
+[33mcommit bd68877f247136aabe35c8a4b81ace0a5fc1905d[m
+Author: HotPotatoC <43059506+HotPotatoC@users.noreply.github.com>
+Date:   Fri Feb 7 14:40:44 2020 +0700
+
+    Deleted sqlite db file
+
+[33mcommit 9d47e6908b9d71b256a94439d8faa6e5f1445a32[m
+Author: lisianthuss116 <59347925+lisianthuss116@users.noreply.github.com>
+Date:   Fri Feb 7 14:34:09 2020 +0700
+
+    Delete & Use | profile-api, use postgres db (#37)
+    
+    * API | create user serializer
+    
+    * API | create user-view-set
+    
+    * register new route
+    
+    * update db
+    
+    * Update serializers.py
+    
+    * Update viewsets.py
+    
+    * change render default-view
+    
+    * add path settings
+    
+    * formatted
+    
+    * Delete | profile serializer
+    
+    * Delete | profile viewset
+    
+    * change route structure
+    
+    * Use postgres-db
+    
+    * delete default-view path
+    
+    * delete file
+
+[33mcommit ac7eedd70dad7514b3fc13bda849c7b4a7ff6283[m
+Author: HotPotatoC <43059506+HotPotatoC@users.noreply.github.com>
+Date:   Fri Feb 7 00:23:23 2020 +0700
+
+    Update package.json
+
+[33mcommit 32150bd5e5aa6cc69dbb7055f1ec05711851e98c[m
+Author: HotPotatoC <43059506+HotPotatoC@users.noreply.github.com>
+Date:   Fri Feb 7 00:17:14 2020 +0700
+
+    Updated articles endpoint
+
+[33mcommit 1497b5556594933ded83b6b5d6190d64cc07d6b3[m
+Author: HotPotatoC <43059506+HotPotatoC@users.noreply.github.com>
+Date:   Fri Feb 7 00:15:46 2020 +0700
+
+    Trigger heroku deployment
+
+[33mcommit fc8477621da265841cddb8794b3f6cb95cb42986[m
+Author: HotPotatoC <43059506+HotPotatoC@users.noreply.github.com>
+Date:   Fri Feb 7 00:09:38 2020 +0700
+
+    Removed deprecated import module
+
+[33mcommit 4b5264af345c8111f9106f9c93a45569a97d5fed[m
+Merge: 105116e 57f2d87
+Author: HotPotatoC <43059506+HotPotatoC@users.noreply.github.com>
+Date:   Fri Feb 7 00:09:00 2020 +0700
+
+    Merge branch 'master' into dev
+
+[33mcommit 105116e31faeb18df75ea63c7e1edef0fd6e77d6[m
+Author: HotPotatoC <43059506+HotPotatoC@users.noreply.github.com>
+Date:   Fri Feb 7 00:08:22 2020 +0700
+
+    Fix whitenoise deprecations
+
+[33mcommit 57f2d871da9ec1b4cf9ae6dacd74d182445db21a[m
+Author: HotPotatoC <43059506+HotPotatoC@users.noreply.github.com>
+Date:   Fri Feb 7 00:03:59 2020 +0700
+
+    Dev (#33)
+    
+    * Article serializers
+    
+    * register article to admin site
+    
+    * delete useless comment
+    
+    * article view json
+    
+    * update db
+    
+    * change settings | add rest-framework-setting
+    
+    * create url for api
+    
+    * faker
+    
+    * update gitignore
+    
+    * Removed trialing whitespaces and added Procfile for heroku django deployment
+    
+    * create user serializer
+    
+    * add user view-set
+    
+    * create default view
+    
+    * adding new urls | api urls
+    
+    * change date-time-field
+    
+    * show current date
+    
+    * change format
+    
+    * update db
+    
+    * Update settings.py
+    
+    * delete faker.json
+    
+    * Update serializers.py
+    
+    * Update views.py
+    
+    * Update models.py
+    
+    * Update views.py
+    
+    * Update settings.py
+    
+    * Update urls.py
+    
+    * Update views.py
+    
+    * Update settings.py
+    
+    * Changed url field in User model to id, and added password and email field
+    
+    * Added runserver script and updated readme.md
+    
+    * Added build files for heroku deployment, fetch articles from rest api
+    
+    * Update README.md
+    
+    * Updated readme.md
+    
+    * Preparing for heroku deployment
+    
+    * Update README.md
+    
+    * Changed static folder to dist in settings.py
+    
+    * Update CONTRIBUTING.md
+    
+    * Changed debug mode to false, updated vue-router mode to history
+    
+    * Added CircleCI status badges
+    
+    * Change on | Serializer and fields name
+    
+    * change model fields name
+    
+    * Use | Debug and type-shortcut
+    
+    * Delete/Change/Add | url route, py-module
+    
+    * update db
+    
+    * Api viewsets
+    
+    * use url-route for api
+    
+    * default view
+    
+    * create profile models
+    
+    * register profile model
+    
+    * backend\users
+    
+    * delete files
+    
+    * update dn
+    
+    * delete user fields
+    
+    * Adding create and edit form (#20)
+    
+    * Adding create and edit form
+    
+    * modified index.js to be lazy load
+    
+    * API | add users (#22)
+    
+    * API | create user serializer
+    
+    * API | create user-view-set
+    
+    * register new route
+    
+    * update db
+    
+    * Update serializers.py
+    
+    * Update viewsets.py
+    
+    * Updated settings.py
+    
+    * Updated Procfile
+    
+    * Updated settings.py
+    
+    * Updated settings.py for heroku
+    
+    * Fixed missing PROJECT_ROOT in settings.py
+    
+    * Update settings.py
+    
+    * index view (#30)
+    
+    * API | create user serializer
+    
+    * API | create user-view-set
+    
+    * register new route
+    
+    * update db
+    
+    * Update serializers.py
+    
+    * Update viewsets.py
+    
+    * change render default-view
+    
+    * add path settings
+    
+    * formatted
+    
+    * Updated package.json for heroku deployment
+    
+    * Preparing for vuejs and django deployment
+    
+    * Fixed incorrect constant
+    
+    Co-authored-by: lisianthuss116 <59347925+lisianthuss116@users.noreply.github.com>
+    Co-authored-by: Achmad Dzulfian <achmad.dzulfian7@gmail.com>
+
+[33mcommit 3839188daf0dd70b19d3604d220fc1dac05604d8[m
+Merge: b4a8d5b c561045
+Author: HotPotatoC <43059506+HotPotatoC@users.noreply.github.com>
+Date:   Fri Feb 7 00:03:10 2020 +0700
+
+    Merge branch 'dev' of https://github.com/HotPotatoC/djavue into dev
+
+[33mcommit b4a8d5b208055181b7b5cbc6ab22e32be5f4bb45[m
+Author: HotPotatoC <43059506+HotPotatoC@users.noreply.github.com>
+Date:   Fri Feb 7 00:02:58 2020 +0700
+
+    Fixed incorrect constant
+
+[33mcommit c561045ad8358f05a5e16e735c615238b92d13ee[m
+Merge: 03511e9 12fd656
+Author: HotPotatoC <43059506+HotPotatoC@users.noreply.github.com>
+Date:   Fri Feb 7 00:01:38 2020 +0700
+
+    Merge branch 'master' into dev
+
+[33mcommit 03511e9d1a6fdd87b21dbabaf3f13393b9a07c32[m
+Author: HotPotatoC <43059506+HotPotatoC@users.noreply.github.com>
+Date:   Fri Feb 7 00:00:15 2020 +0700
+
+    Preparing for vuejs and django deployment
+
+[33mcommit 12fd6560e8a797ba76f56f0bcf7a77172502e5cc[m
+Author: HotPotatoC <43059506+HotPotatoC@users.noreply.github.com>
+Date:   Thu Feb 6 23:44:15 2020 +0700
+
+    Dev (#32)
+    
+    * Article serializers
+    
+    * register article to admin site
+    
+    * delete useless comment
+    
+    * article view json
+    
+    * update db
+    
+    * change settings | add rest-framework-setting
+    
+    * create url for api
+    
+    * faker
+    
+    * update gitignore
+    
+    * Removed trialing whitespaces and added Procfile for heroku django deployment
+    
+    * create user serializer
+    
+    * add user view-set
+    
+    * create default view
+    
+    * adding new urls | api urls
+    
+    * change date-time-field
+    
+    * show current date
+    
+    * change format
+    
+    * update db
+    
+    * Update settings.py
+    
+    * delete faker.json
+    
+    * Update serializers.py
+    
+    * Update views.py
+    
+    * Update models.py
+    
+    * Update views.py
+    
+    * Update settings.py
+    
+    * Update urls.py
+    
+    * Update views.py
+    
+    * Update settings.py
+    
+    * Changed url field in User model to id, and added password and email field
+    
+    * Added runserver script and updated readme.md
+    
+    * Added build files for heroku deployment, fetch articles from rest api
+    
+    * Update README.md
+    
+    * Updated readme.md
+    
+    * Preparing for heroku deployment
+    
+    * Update README.md
+    
+    * Changed static folder to dist in settings.py
+    
+    * Update CONTRIBUTING.md
+    
+    * Changed debug mode to false, updated vue-router mode to history
+    
+    * Added CircleCI status badges
+    
+    * Change on | Serializer and fields name
+    
+    * change model fields name
+    
+    * Use | Debug and type-shortcut
+    
+    * Delete/Change/Add | url route, py-module
+    
+    * update db
+    
+    * Api viewsets
+    
+    * use url-route for api
+    
+    * default view
+    
+    * create profile models
+    
+    * register profile model
+    
+    * backend\users
+    
+    * delete files
+    
+    * update dn
+    
+    * delete user fields
+    
+    * Adding create and edit form (#20)
+    
+    * Adding create and edit form
+    
+    * modified index.js to be lazy load
+    
+    * API | add users (#22)
+    
+    * API | create user serializer
+    
+    * API | create user-view-set
+    
+    * register new route
+    
+    * update db
+    
+    * Update serializers.py
+    
+    * Update viewsets.py
+    
+    * Updated settings.py
+    
+    * Updated Procfile
+    
+    * Updated settings.py
+    
+    * Updated settings.py for heroku
+    
+    * Fixed missing PROJECT_ROOT in settings.py
+    
+    * Update settings.py
+    
+    * index view (#30)
+    
+    * API | create user serializer
+    
+    * API | create user-view-set
+    
+    * register new route
+    
+    * update db
+    
+    * Update serializers.py
+    
+    * Update viewsets.py
+    
+    * change render default-view
+    
+    * add path settings
+    
+    * formatted
+    
+    * Updated package.json for heroku deployment
+    
+    Co-authored-by: lisianthuss116 <59347925+lisianthuss116@users.noreply.github.com>
+    Co-authored-by: Achmad Dzulfian <achmad.dzulfian7@gmail.com>
+
+[33mcommit a6dd90c3a18db7d40fd8f66795a8bfc725697855[m
+Merge: a8b0346 2dc931b
+Author: HotPotatoC <43059506+HotPotatoC@users.noreply.github.com>
+Date:   Thu Feb 6 23:42:40 2020 +0700
+
+    Merge branch 'dev' of https://github.com/HotPotatoC/djavue into dev
+
+[33mcommit a8b034622cbdb0a87d5f215469caefcae7265905[m
+Author: HotPotatoC <43059506+HotPotatoC@users.noreply.github.com>
+Date:   Thu Feb 6 23:42:28 2020 +0700
+
+    Updated package.json for heroku deployment
+
+[33mcommit 649fc620d46cec85538d74e6f465e8aabc3eed6d[m
+Author: HotPotatoC <43059506+HotPotatoC@users.noreply.github.com>
+Date:   Thu Feb 6 23:32:17 2020 +0700
+
+    Deploy (#31)
+    
+    * Article serializers
+    
+    * register article to admin site
+    
+    * delete useless comment
+    
+    * article view json
+    
+    * update db
+    
+    * change settings | add rest-framework-setting
+    
+    * create url for api
+    
+    * faker
+    
+    * update gitignore
+    
+    * Removed trialing whitespaces and added Procfile for heroku django deployment
+    
+    * create user serializer
+    
+    * add user view-set
+    
+    * create default view
+    
+    * adding new urls | api urls
+    
+    * change date-time-field
+    
+    * show current date
+    
+    * change format
+    
+    * update db
+    
+    * Update settings.py
+    
+    * delete faker.json
+    
+    * Update serializers.py
+    
+    * Update views.py
+    
+    * Update models.py
+    
+    * Update views.py
+    
+    * Update settings.py
+    
+    * Update urls.py
+    
+    * Update views.py
+    
+    * Update settings.py
+    
+    * Changed url field in User model to id, and added password and email field
+    
+    * Added runserver script and updated readme.md
+    
+    * Added build files for heroku deployment, fetch articles from rest api
+    
+    * Update README.md
+    
+    * Updated readme.md
+    
+    * Preparing for heroku deployment
+    
+    * Update README.md
+    
+    * Changed static folder to dist in settings.py
+    
+    * Update CONTRIBUTING.md
+    
+    * Changed debug mode to false, updated vue-router mode to history
+    
+    * Added CircleCI status badges
+    
+    * Change on | Serializer and fields name
+    
+    * change model fields name
+    
+    * Use | Debug and type-shortcut
+    
+    * Delete/Change/Add | url route, py-module
+    
+    * update db
+    
+    * Api viewsets
+    
+    * use url-route for api
+    
+    * default view
+    
+    * create profile models
+    
+    * register profile model
+    
+    * backend\users
+    
+    * delete files
+    
+    * update dn
+    
+    * delete user fields
+    
+    * Adding create and edit form (#20)
+    
+    * Adding create and edit form
+    
+    * modified index.js to be lazy load
+    
+    * API | add users (#22)
+    
+    * API | create user serializer
+    
+    * API | create user-view-set
+    
+    * register new route
+    
+    * update db
+    
+    * Update serializers.py
+    
+    * Update viewsets.py
+    
+    * Updated settings.py
+    
+    * Updated Procfile
+    
+    * Updated settings.py
+    
+    * Updated settings.py for heroku
+    
+    * Fixed missing PROJECT_ROOT in settings.py
+    
+    * Update settings.py
+    
+    * index view (#30)
+    
+    * API | create user serializer
+    
+    * API | create user-view-set
+    
+    * register new route
+    
+    * update db
+    
+    * Update serializers.py
+    
+    * Update viewsets.py
+    
+    * change render default-view
+    
+    * add path settings
+    
+    * formatted
+    
+    Co-authored-by: lisianthuss116 <59347925+lisianthuss116@users.noreply.github.com>
+    Co-authored-by: Achmad Dzulfian <achmad.dzulfian7@gmail.com>
+
+[33mcommit 2dc931b81dcbf07aded00d4e0b9ec63d2bb33882[m
+Author: lisianthuss116 <59347925+lisianthuss116@users.noreply.github.com>
+Date:   Thu Feb 6 23:31:41 2020 +0700
+
+    index view (#30)
+    
+    * API | create user serializer
+    
+    * API | create user-view-set
+    
+    * register new route
+    
+    * update db
+    
+    * Update serializers.py
+    
+    * Update viewsets.py
+    
+    * change render default-view
+    
+    * add path settings
+    
+    * formatted
+
+[33mcommit 51359b6b2231af844867c3fd30bfbc86cb3fbcca[m
+Author: HotPotatoC <43059506+HotPotatoC@users.noreply.github.com>
+Date:   Thu Feb 6 23:26:06 2020 +0700
+
+    Deploy heroku (#29)
+    
+    * Article serializers
+    
+    * register article to admin site
+    
+    * delete useless comment
+    
+    * article view json
+    
+    * update db
+    
+    * change settings | add rest-framework-setting
+    
+    * create url for api
+    
+    * faker
+    
+    * update gitignore
+    
+    * Removed trialing whitespaces and added Procfile for heroku django deployment
+    
+    * create user serializer
+    
+    * add user view-set
+    
+    * create default view
+    
+    * adding new urls | api urls
+    
+    * change date-time-field
+    
+    * show current date
+    
+    * change format
+    
+    * update db
+    
+    * Update settings.py
+    
+    * delete faker.json
+    
+    * Update serializers.py
+    
+    * Update views.py
+    
+    * Update models.py
+    
+    * Update views.py
+    
+    * Update settings.py
+    
+    * Update urls.py
+    
+    * Update views.py
+    
+    * Update settings.py
+    
+    * Changed url field in User model to id, and added password and email field
+    
+    * Added runserver script and updated readme.md
+    
+    * Added build files for heroku deployment, fetch articles from rest api
+    
+    * Update README.md
+    
+    * Updated readme.md
+    
+    * Preparing for heroku deployment
+    
+    * Update README.md
+    
+    * Changed static folder to dist in settings.py
+    
+    * Update CONTRIBUTING.md
+    
+    * Changed debug mode to false, updated vue-router mode to history
+    
+    * Added CircleCI status badges
+    
+    * Change on | Serializer and fields name
+    
+    * change model fields name
+    
+    * Use | Debug and type-shortcut
+    
+    * Delete/Change/Add | url route, py-module
+    
+    * update db
+    
+    * Api viewsets
+    
+    * use url-route for api
+    
+    * default view
+    
+    * create profile models
+    
+    * register profile model
+    
+    * backend\users
+    
+    * delete files
+    
+    * update dn
+    
+    * delete user fields
+    
+    * Adding create and edit form (#20)
+    
+    * Adding create and edit form
+    
+    * modified index.js to be lazy load
+    
+    * API | add users (#22)
+    
+    * API | create user serializer
+    
+    * API | create user-view-set
+    
+    * register new route
+    
+    * update db
+    
+    * Update serializers.py
+    
+    * Update viewsets.py
+    
+    * Updated settings.py
+    
+    * Updated Procfile
+    
+    * Updated settings.py
+    
+    * Updated settings.py for heroku
+    
+    * Fixed missing PROJECT_ROOT in settings.py
+    
+    * Update settings.py
+    
+    Co-authored-by: lisianthuss116 <59347925+lisianthuss116@users.noreply.github.com>
+    Co-authored-by: Achmad Dzulfian <achmad.dzulfian7@gmail.com>
