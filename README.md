@@ -15,7 +15,7 @@ A blog made with Django, VueJS and sqlite3
 
 ## Getting Started
 
-To get started with the application first you will need to clone this repository or fork it then clone the forked repository
+Clone the repository
 
 ```
 $ git clone https://github.com/HotPotatoC/djavue.git
@@ -29,10 +29,29 @@ $ python -m pip install -r requirements.txt
 $ npm install
 ```
 
-Run the vue service
+Run the services
+
 ```
+$ ./runserver
 $ npm run serve
 ```
+
+Then head to `http://localhost:8080/` to see your web application running.
+
+## Project Structure
+| Route | Content |
+| ------------- | ------------- | ------------- |
+| / | View Articles |
+| /post/:id | View an Article post by the id |
+| /create | Add a new post |
+| /edit/:id | Edit a post |
+
+API
+| Method | Route | Content |
+| ------------- | ------------- | ------------- |
+| GET | /api/v1/articles | View Articles |
+| GET | /api/v1/articles/:id | View an Article by the id |
+| POST | /api/v1/articles | Add a new Article |
 
 ## Contributing
 
