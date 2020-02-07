@@ -5,5 +5,6 @@ django-dotenv
 django-heroku
 djangorestframework
 gunicorn
+pillow
 psycopg2
 whitenoise
