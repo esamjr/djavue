@@ -39,14 +39,16 @@ $ npm run serve
 Then head to `http://localhost:8080/` to see your web application running.
 
 ## Project Structure
+
 | Route | Content |
-| ------------- | ------------- | ------------- |
+| ------------- | ------------- |
 | / | View Articles |
 | /post/:id | View an Article post by the id |
 | /create | Add a new post |
 | /edit/:id | Edit a post |
 
 API
+
 | Method | Route | Content |
 | ------------- | ------------- | ------------- |
 | GET | /api/v1/articles | View Articles |
