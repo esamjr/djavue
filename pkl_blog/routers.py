@@ -1,9 +1,9 @@
 import sys
 from rest_framework import routers
 sys.path.append('../backend/')
-from api.viewsets import (
-    UserViewSet, ArticleViewSet)
+from api import viewsets
 
 router = routers.DefaultRouter()
-router.register('users', UserViewSet)
-router.register('articles', ArticleViewSet)
+router.register('users', viewsets.UserViewSet)
+router.register('profile', viewsets.ProfileViewSet)
+router.register('article', viewsets.ArticleViewSet)

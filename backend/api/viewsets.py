@@ -1,8 +1,9 @@
 from .serializers import (
-    ArticleSerializer, UserSerializer)
+    ArticleSerializer, ProfileSerializer, UserSerializer)
 from django.contrib.auth.models import User
 from rest_framework import viewsets
 from article.models import Article
+from users.models import Profile
 
 class UserViewSet(viewsets.ModelViewSet) :
     """
@@ -10,6 +11,13 @@ class UserViewSet(viewsets.ModelViewSet) :
     """
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
+
+class ProfileViewSet(viewsets.ModelViewSet) :
+    """
+    API Endpoint that allows profile to be viewed or edited
+    """
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
 
 class ArticleViewSet(viewsets.ModelViewSet) :
     """
