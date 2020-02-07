@@ -1,5 +1,9 @@
 django
-djangorestframework
+dj-database-url
+django-cors-headers
+django-dotenv
 django-heroku
+djangorestframework
 gunicorn
+psycopg2
 whitenoise
