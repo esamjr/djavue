@@ -47,7 +47,7 @@ jobs:
       - run:
           name: Check if .env file exists
           command: |
-            if [ -e .env ] then
+            if [ -e .env ]; then
               echo ".env file exists"
             fi
       # run tests!
