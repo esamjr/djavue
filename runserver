@@ -1,14 +1,13 @@
 #!/usr/bin/env python
+import os
 import sys
 import subprocess
 
-
-def run_server():
+if __name__ == "__main__":
     try:
-        port = sys.argv[1]
-        subprocess.call("python manage.py runserver {}".format(port))
-    except:
-        raise AttributeError("Port must be specified and must be a number")
-
-
-run_server()
+        if len(sys.argv) == 1:
+            subprocess.call("python manage.py runserver {}".format(
+                os.getenv('PORT') or 8000))
+        subprocess.call("python manage.py runserver {}".format(sys.argv[1]))
+    except KeyboardInterrupt:
+        print("Server has been shutdown")

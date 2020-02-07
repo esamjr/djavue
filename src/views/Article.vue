@@ -2,7 +2,7 @@
   <div class="home container mx-auto">
     <h1 class="text-5xl font-bold">Blog</h1>
     <div class="flex flex-wrap">
-      <Post :article="article" v-for="article in articles" :key="article.id" />
+      <Post :article="article" />
     </div>
   </div>
 </template>
@@ -12,25 +12,28 @@ import axios from "axios";
 import Post from "@/components/Post";
 
 export default {
-  name: "home",
+  name: "Article",
   components: {
     Post
   },
   data() {
     return {
       endpoint: "/api/v1/articles/",
-      articles: null
+      article: null
     };
   },
   created() {
-    this.fetchArticles();
+    this.fetchArticle();
   },
   methods: {
-    async fetchArticles() {
-      let { data } = await axios.get(this.endpoint);
+    async fetchArticle() {
+      let { data } = await axios.get(this.endpoint + this.$route.params["id"]);
 
-      this.articles = data;
+      this.article = data;
     }
   }
 };
 </script>
+
+<style>
+</style>
