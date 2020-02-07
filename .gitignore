@@ -5,5 +5,3 @@ env
 dist
 migrations
 node_modules
-
-.env
