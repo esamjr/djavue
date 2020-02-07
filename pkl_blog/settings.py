@@ -85,16 +85,16 @@ WSGI_APPLICATION = 'pkl_blog.wsgi.application'
 
 
 # Database
-user     = os.getenv('USER')
+user = os.getenv('USER')
 password = os.getenv('PASSWORD')
-host     = os.getenv('HOST')
-port     = os.getenv('PORT')
-db       = os.getenv('DB_NAME')
+host = os.getenv('HOST')
+port = os.getenv('PORT')
+db = os.getenv('DB_NAME')
 
-DATABASES    = {}
+DATABASES = {}
 DATABASE_URL = os.getenv('DATABASE_URL') or 'postgres://{0}:{1}@{2}:{3}/{4}'.format(
     user, password, host, port, db)
-DATABASES['default'] = dj_database_url.parse(DATABASE_URL, conn_max_age = None)
+DATABASES['default'] = dj_database_url.parse(DATABASE_URL, conn_max_age=None)
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
