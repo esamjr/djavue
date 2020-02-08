@@ -2,11 +2,9 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-import dotenv
 
-if __name__ == '__main__':
-    dotenv.read_dotenv(override = True)
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'djavue.settings')
+def main() :
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', env('DJANGO_SETTINGS_MODULE'))
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
@@ -16,3 +14,18 @@ if __name__ == '__main__':
             "forget to activate a virtual environment?"
         ) from exc
     execute_from_command_line(sys.argv)
+
+if __name__ == '__main__':
+    try :
+        import environ
+        import dotenv
+        if True :
+            dotenv.read_dotenv(override = True)
+            env = environ.Env(DEBUG = (bool, False))
+            environ.Env.read_env('./.env')
+        
+        main()
+    except :
+        raise Exception(
+            "Something is wrong with your env setup"
+        )
