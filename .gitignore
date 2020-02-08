@@ -7,4 +7,4 @@ dist
 migrations
 node_modules
 
-./djvue/settings/local
+/djavue/settings/local.py
