@@ -6,14 +6,14 @@ from article.models import Article
 
 class UserSerializer(serializers.ModelSerializer):
     username = serializers.CharField(max_length=30)
-    email    = serializers.EmailField(max_length=30)
+    email = serializers.EmailField(max_length=30)
     
     def create(self, validated_data) :
         return User.objects.create(**validated_data)
 
     def update(self, instance, validated_data) :
-        instance.user  = validated_data.get('username', instance.username)
-        instance.title = validated_data.get('email', instance.email)
+        instance.user = validated_data.get('username',instance.username)
+        instance.title = validated_data.get('email',instance.email)
         
         instance.save()
         return instance
