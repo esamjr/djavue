@@ -27,5 +27,5 @@ if __name__ == '__main__':
         main()
     except :
         raise Exception(
-            "Something is wrong with your env setup"
+            "hmm, somethin is wrong there. you need to fix it!"
         )
