@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils.timezone import now
 import datetime
 
 class Article(models.Model):
