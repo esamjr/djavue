@@ -5,9 +5,8 @@ from api.viewsets import (
     ArticleView, ArticleUpdateView, ArticleCreateView, ArticleDeleteView, 
     UserView)
 
-article = 'articles'
-user    = 'users'
-
+article='articles'
+user='users'
 urlpatterns = [
     # Get response
     path('articles/', ArticleView.as_view()),
