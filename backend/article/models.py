@@ -8,8 +8,6 @@ class Article(models.Model):
     title = models.CharField(max_length=60)
     content = models.TextField()
     date_posted = models.DateTimeField(default=now, editable=False)
-    # default date | formatted
-    # datetime.datetime.now().strftime("%B, %a %d %Y")
 
     def __str__(self):
         return self.title
