@@ -1,8 +1,9 @@
-from .serializers import (
-    ArticleSerializer, UserSerializer)
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.decorators import api_view
+from rest_framework import status
+from .serializers import ArticleSerializer, UserSerializer
 
 from django.contrib.auth.models import User
 from article.models import Article
@@ -14,79 +15,53 @@ class UserView(APIView):
     """
     def get(self, request) :
         queryset = User.objects.all().order_by('-date_joined')
-        
         serializer = UserSerializer(queryset, many = True)
         return Response({'users': serializer.data})
+    
+@api_view(['GET','PUT', 'DELETE'])
+def update_delete(request, pk) : 
+    """
+    API Endpoint that allows users to be edited or deleted
+    """
+    if request.method == "GET" :
+        set_queryset   = Article.objects.filter(id = pk)
+        set_serializer = ArticleSerializer(set_queryset, many = True)
+        return Response({'articles': set_serializer.data})
 
-# CREATE
-class ArticleView(APIView):
-    """
-    API endpoint that allows article to be viewed
-    """
-    def get(self, request) :
-        queryset = Article.objects.all()
-        serializer = ArticleSerializer(queryset, many = True)
-        return Response({'articles': serializer.data})
-
-# Create
-class ArticleCreateView(APIView) :
-    """
-    API endpoint that allows article to be created
-    """
-    def post(self, request) :
-        articles = request.data.get('article')
+    if request.method == "PUT" :
+        the_article = get_object_or_404(Article.objects.all(), pk = pk)
+        data        = request.data.get('article')
+        serializer  = ArticleSerializer(
+            the_article, data = data, partial = True)
         
-        # Create new Article based data above
+        if serializer.is_valid(raise_exception = True) :
+            serializer.save()
+            return Response({"success":"Article successfully updated"})
+        return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
+    
+    if request.method == "DELETE" :
+        articles  = get_object_or_404(Article.objects.all(), pk = pk)
+        operation = articles.delete()
+        if operation :
+            return Response({"success":"Article successfully deleted"})
+        else :
+            return Response({"failed":"Failed to delete"})
+
+@api_view(['GET', 'POST'])
+def get_post(request) :
+    """
+    API Endpoint that allows users to be viewed or created
+    """
+    if request.method == "GET" :
+        queryset   = Article.objects.all()
+        serializer = ArticleSerializer(queryset, many = True)
+        return Response(serializer.data)
+    
+    if request.method == "POST" :
+        articles   = request.data.get('article') 
         serializer = ArticleSerializer(data = articles)
         if serializer.is_valid(raise_exception = True) :
-            article_saved = serializer.save()
-            
-        return Response({"success": "Article {} created successfully".format(article_saved.title)})
-
-# Update | PUT
-class ArticleUpdateView(APIView) :
-    """
-    API endpoint that allows article to be viewed or edited
-    """
-    def get(self, request, pk) :
-        if not get_object_or_404(Article.objects.filter(id=pk)) :
-            return False
-        
-        queryset = Article.objects.filter(id=pk)
-        serializer = ArticleSerializer(queryset, many = True)
-        return Response({'articles': serializer.data})
+            serializer.save()
+            return Response(serializer.data, status = status.HTTP_201_CREATED)
+        return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
     
-    def put(self, request, pk) :
-        saved_article = get_object_or_404(Article.objects.all(), pk=pk)
-        data = request.data.get('article')
-        
-        # [partial = True]
-        # passing partial=True to the serializer since we want to be able to 
-        # update some fields but not necessarily all at once. 
-        serializer = ArticleSerializer(
-            instance = saved_article, data = data, partial = True
-        )
-        if serializer.is_valid(raise_exception = True) :
-            article_saved = serializer.save()
-
-        return Response({"success":"Article '{}' updated successfully".format(article_saved.title)})
-
-# DELETE | DELETE
-class ArticleDeleteView(APIView) :
-    """
-    API endpoint that allows article to be viewed or deleted
-    """
-    def get(self, request, pk) :
-        if not get_object_or_404(Article.objects.filter(id=pk)) :
-            return False
-        
-        queryset = Article.objects.filter(id=pk)
-        serializer = ArticleSerializer(queryset, many = True)
-        return Response({'articles': serializer.data})
-    
-    def delete(self, request, pk) :
-        article = get_object_or_404(Article.objects.all(), pk=pk)
-        article_title = article.title
-        article.delete()
-        
-        return Response({"success":"Article with title '{}' has been deleted".format(article_title)}, status = 204)
