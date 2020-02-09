@@ -51,9 +51,9 @@ API
 
 | Method | Route | Content |
 | ------------- | ------------- | ------------- |
-| GET | /api/v1/articles | View Articles |
+| GET | /api/v1/articles/ | View Articles |
 | GET | /api/v1/articles/:id | View an Article by the id |
-| POST | /api/v1/articles | Add a new Article |
+| POST | /api/v1/articles/ | Add a new Article |
 
 ## Contributing
 
