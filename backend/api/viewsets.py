@@ -53,7 +53,7 @@ def get_post(request) :
     API Endpoint that allows users to be viewed or created
     """
     if request.method == "GET" :
-        queryset   = Article.objects.all()
+        queryset   = Article.objects.all().order_by('-date_posted')
         serializer = ArticleSerializer(queryset, many = True)
         return Response(serializer.data)
     
@@ -64,4 +64,3 @@ def get_post(request) :
             serializer.save()
             return Response(serializer.data, status = status.HTTP_201_CREATED)
         return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
-    
