@@ -2,7 +2,9 @@ django
 dj-database-url
 django-cors-headers
 django-dotenv
+django-environ
 django-heroku
+django-settings-export
 djangorestframework
 gunicorn
 pillow
