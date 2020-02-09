@@ -1,9 +1,10 @@
 __pycache__
 .vscode
+.env
 
 env
 dist
 migrations
 node_modules
 
-.env
+/djavue/settings/local.py

@@ -1,9 +1,11 @@
-from api.viewsets import (
-    UserViewSet, ArticleViewSet)
-import sys
-from rest_framework import routers
-sys.path.append('../backend/')
+from django.urls import path
+from backend.api.viewsets import get_post, update_delete
 
-router = routers.DefaultRouter()
-router.register('users', UserViewSet)
-router.register('articles', ArticleViewSet)
+article = 'articles'
+user = 'users'
+
+urlpatterns = [
+    # Get response
+    path('articles/', get_post),
+    path('articles/<int:pk>', update_delete),
+]

@@ -1,0 +1,35 @@
+|| CREATE ||
+# must be like this, otherwise it will give you an error
+url     : http://127.0.0.1:8000/api/v1/articles/create/ 
+context : <use this format below>
+
+{
+    "article":
+        {
+            "user":"USER HERE",
+            "title":"TITLE HERE",
+            "content":"CONTENT HERE" # max(2000 character)
+        }
+}
+
+
+
+|| UPDATE ||
+# must be like this, otherwise it will give you an error
+url     : http://127.0.0.1:8000/api/v1/articles/update/<id> 
+context : <use this format below>
+
+{
+    "article":
+        {
+            "user":"USER HERE",
+            "title":"TITLE HERE",
+            "content":"CONTENT HERE" # max(2000 character)
+        }
+}
+
+
+
+|| DELETE ||
+# must be like this, otherwise it will give you an error
+url : http://127.0.0.1:8000/api/v1/articles/delete/<id> 

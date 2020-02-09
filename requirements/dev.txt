@@ -1,0 +1,5 @@
+dj-database-url
+django-cors-headers
+django-dotenv
+pillow
+psycopg2
