@@ -17,28 +17,28 @@ class UserView(APIView):
         queryset = User.objects.all().order_by('-date_joined')
         serializer = UserSerializer(queryset, many = True)
         return Response({'users': serializer.data})
-    
+
 @api_view(['GET','PUT', 'DELETE'])
-def update_delete(request, pk) : 
+def update_delete(request, pk) :
     """
     API Endpoint that allows users to be edited or deleted
     """
     if request.method == "GET" :
         set_queryset   = Article.objects.filter(id = pk)
         set_serializer = ArticleSerializer(set_queryset, many = True)
-        return Response({'articles': set_serializer.data})
+        return Response(set_serializer.data)
 
     if request.method == "PUT" :
         the_article = get_object_or_404(Article.objects.all(), pk = pk)
         data        = request.data.get('article')
         serializer  = ArticleSerializer(
             the_article, data = data, partial = True)
-        
+
         if serializer.is_valid(raise_exception = True) :
             serializer.save()
             return Response({"success":"Article successfully updated"})
         return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
-    
+
     if request.method == "DELETE" :
         articles  = get_object_or_404(Article.objects.all(), pk = pk)
         operation = articles.delete()
@@ -56,9 +56,9 @@ def get_post(request) :
         queryset   = Article.objects.all().order_by('-date_posted')
         serializer = ArticleSerializer(queryset, many = True)
         return Response(serializer.data)
-    
+
     if request.method == "POST" :
-        articles   = request.data.get('article') 
+        articles   = request.data.get('article')
         serializer = ArticleSerializer(data = articles)
         if serializer.is_valid(raise_exception = True) :
             serializer.save()

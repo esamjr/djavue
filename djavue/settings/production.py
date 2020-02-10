@@ -1,4 +1,7 @@
 from djavue.settings.base import *
+import environ
+env = environ.Env()
+environ.Env.read_env('./.env')
 
 # Override base settings
 DEBUG = False
