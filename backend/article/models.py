@@ -9,9 +9,9 @@ class Article(models.Model):
     content     = models.TextField()
     date_posted = models.DateField(default=datetime.date.today, editable=False)
 
-    def save(self):
+    def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
-        super(Article, self).save()
+        super(Article, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.title

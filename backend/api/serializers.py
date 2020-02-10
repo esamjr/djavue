@@ -20,6 +20,7 @@ class ArticleSerializer(serializers.HyperlinkedModelSerializer) :
             'id',
             'user',
             'title',
+            'slug',
             'content',
             'date_posted'
         ]
