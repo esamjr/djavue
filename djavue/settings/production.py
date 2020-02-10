@@ -3,6 +3,7 @@ import environ
 env = environ.Env()
 environ.Env.read_env('./.env')
 
+SECRET_KEY = os.getenv('SECRET_KEY')
 # Override base settings
 DEBUG = False
 

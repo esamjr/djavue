@@ -3,6 +3,7 @@ import environ
 env = environ.Env()
 environ.Env.read_env('./.env')
 
+SECRET_KEY = "djavue-key-kiC4m90"
 # Override base settings
 ALLOWED_HOSTS = [
     '127.0.0.1', 'localhost'
