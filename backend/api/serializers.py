@@ -20,6 +20,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 class ArticleSerializer(serializers.Serializer) :
     id = serializers.ReadOnlyField(required=False)
+    slug =serializers.SlugField(max_length=60)
     user = serializers.CharField(max_length=60)
     title = serializers.CharField(max_length=60)
     content = serializers.CharField(max_length=2000)
