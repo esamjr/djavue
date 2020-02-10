@@ -20,14 +20,16 @@ class ArticleGetPostView(viewsets.ModelViewSet) :
     queryset = Article.objects.all().order_by('-id')
     serializer_class = ArticleSerializer
 
-    @api_view(['PUT'])
-    def update(self, request, pk) :
-        article    = get_object_or_404(Article.objects.all(), pk = pk)
-        serializer = ArticleSerializer(
-            article, data = request.data, partial = True)
-        if serializer.is_valid() :
-            serializer.save()
-            return Response({serializer.data})
+    def put(self, request, pk):
+        saved_article  = get_object_or_404(Article.objects.all(), pk=pk)
+        data = request.data.get('article')
+        serializer = ArticleSerializer(instance=saved_article, data=data, partial=True)
+
+        if serializer.is_valid(raise_exception=True):
+            article_saved = serializer.save()
+            return Response({"success": "Article '{}' updated successfully".format(article_saved.title)})
+
+
 
     @api_view(['DELETE'])
     def delete(self, request, pk) :
