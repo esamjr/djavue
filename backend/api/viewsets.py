@@ -19,16 +19,16 @@ class UserView(viewsets.ModelViewSet) :
 class ArticleGetPostView(viewsets.ModelViewSet) :
     queryset = Article.objects.all().order_by('-id')
     serializer_class = ArticleSerializer
-    
+
     @api_view(['PUT'])
     def update(self, request, pk) :
         article    = get_object_or_404(Article.objects.all(), pk = pk)
         serializer = ArticleSerializer(
             article, data = request.data, partial = True)
         if serializer.is_valid() :
-            serializer.save() 
+            serializer.save()
             return Response({serializer.data})
-            
+
     @api_view(['DELETE'])
     def delete(self, request, pk) :
         article = get_object_or_404(Article.objects.all(), pk = pk)
