@@ -8,7 +8,6 @@ def main() :
     env = environ.Env(DEBUG = (bool, False))
     environ.Env.read_env('./.env')
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', env('DJANGO_SETTINGS_MODULE'))
-    
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
@@ -33,4 +32,3 @@ if __name__ == '__main__':
             "Couldn't import environ and dotenv. Are you sure it's installed or are you forget to activate your virtual"
             "virtual environment?"
         ) 
-            

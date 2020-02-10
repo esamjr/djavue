@@ -27,9 +27,9 @@ export default {
   },
   methods: {
     async fetchArticle() {
-      let { data } = await axios.get(this.endpoint + this.$route.params["id"]);
+      let response = await axios.get(this.endpoint + this.$route.params["id"]);
 
-      this.article = data;
+      this.article = response.data[0];
     }
   }
 };

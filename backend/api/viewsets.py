@@ -17,9 +17,6 @@ class UserView(viewsets.ModelViewSet) :
     serializer_class = UserSerializer
 
 class ArticleGetPostView(viewsets.ModelViewSet) :
-    """
-    API Endpoint that allows articles to be viewed or edited
-    """
     queryset = Article.objects.all().order_by('-id')
     serializer_class = ArticleSerializer
     
@@ -32,8 +29,6 @@ class ArticleGetPostView(viewsets.ModelViewSet) :
             serializer.save() 
             return Response({serializer.data})
             
-        return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
-    
     @api_view(['DELETE'])
     def delete(self, request, pk) :
         article = get_object_or_404(Article.objects.all(), pk = pk)
