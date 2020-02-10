@@ -1,7 +1,6 @@
 <template>
   <div class="home container mx-auto">
-    <h1 class="text-5xl font-bold">Blog</h1>
-    <div class="flex flex-wrap">
+    <div class="flex">
       <Post :article="article" v-for="article in articles" :key="article.id" />
     </div>
   </div>
@@ -27,9 +26,13 @@ export default {
   },
   methods: {
     async fetchArticles() {
-      let { data } = await axios.get(this.endpoint);
+      try {
+        let { data } = await axios.get(this.endpoint);
 
-      this.articles = data;
+        this.articles = data;
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 };

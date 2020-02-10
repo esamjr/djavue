@@ -1,8 +1,12 @@
 <template>
-  <div class="home container mx-auto">
-    <h1 class="text-5xl font-bold">Blog</h1>
-    <div class="flex flex-wrap">
-      <Post :article="article" />
+  <div class="home container mx-auto md:px-32 lg:px-64">
+    <div class="flex flex-wrap justify-center">
+      <div class="w-full p-6 m-6" :class="grid">
+        <h1 class="text-5xl font-bold">{{ article.title }}</h1>
+        <p class="text-gray-600">By {{ article.user }}</p>
+        <p class="text-gray-600">{{ article.date_posted }}</p>
+        <div class="pt-12 content">{{ article.content }}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -27,13 +31,22 @@ export default {
   },
   methods: {
     async fetchArticle() {
-      let response = await axios.get(this.endpoint + this.$route.params["id"]);
+      try {
+        let response = await axios.get(
+          this.endpoint + this.$route.params["id"]
+        );
 
-      this.article = response.data[0];
+        this.article = response.data[0];
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.content {
+  font-size: 20px;
+}
 </style>

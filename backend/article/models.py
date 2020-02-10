@@ -8,7 +8,7 @@ class Article(models.Model):
     title       = models.CharField(max_length=60)
     content     = models.TextField()
     date_posted = models.DateField(default=datetime.date.today, editable=False)
-    
+
     def save(self):
         self.slug = slugify(self.title)
         super(Article, self).save()
