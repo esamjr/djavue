@@ -2,8 +2,6 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-import environ
-import dotenv
 
 def main() :
     dotenv.read_dotenv(override = True)
@@ -27,14 +25,12 @@ def main() :
 
 if __name__ == '__main__':
     try :
+        import environ
+        import dotenv
         main()
     except ImportError :
-        try :
-            import environ
-            import dotenv
-        except ImportError :
-            raise ImportError(
-                "Couldn't import environ and dotenv. Are you sure it's installed or are you forget to activate your virtual"
-                "virtual environment?"
-            )
+        raise ImportError(
+            "Couldn't import environ and dotenv. Are you sure it's installed or are you forget to activate your virtual"
+            "virtual environment?"
+        ) 
             
