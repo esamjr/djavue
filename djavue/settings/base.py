@@ -1,8 +1,8 @@
 import django_heroku
 import os
 import sys
-import dj_database_url
 import environ
+import dj_database_url
 
 env = environ.Env(DEBUG = (bool, True))
 environ.Env.read_env('./.env')
@@ -10,7 +10,7 @@ sys.path.append('backend/')
 
 BASE_DIR   = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = env('SECRET_KEY')
-DEBUG      = True
+DEBUG      = False
 
 # Application definition
 INSTALLED_APPS = [
