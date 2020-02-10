@@ -1,5 +1,5 @@
 """
-ASGI config for pkl_blog project.
+ASGI config for djavue project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pkl_blog.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'djavue.settings.base')
 
 application = get_asgi_application()
