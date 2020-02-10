@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 from rest_framework.response import Response
 from rest_framework import viewsets
 from rest_framework.decorators import api_view, action
@@ -23,14 +23,18 @@ class ArticleGetPostView(viewsets.ModelViewSet) :
     queryset = Article.objects.all().order_by('-id')
     serializer_class = ArticleSerializer
     
+    @api_view(['PUT'])
     def update(self, request, pk) :
         article    = get_object_or_404(Article.objects.all(), pk = pk)
-        serializer = ArticleSerializer(data = request.data)
+        serializer = ArticleSerializer(
+            article, data = request.data, partial = True)
         if serializer.is_valid() :
             serializer.save() 
-            return Response(serializer.data)
+            Http
+            
         return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
     
+    @api_view(['DELETE'])
     def delete(self, request, pk) :
         article = get_object_or_404(Article.objects.all(), pk = pk)
         article.delete()
