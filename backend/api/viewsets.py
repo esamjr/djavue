@@ -30,7 +30,7 @@ class ArticleGetPostView(viewsets.ModelViewSet) :
             article, data = request.data, partial = True)
         if serializer.is_valid() :
             serializer.save() 
-            Http
+            return Response({serializer.data})
             
         return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
     
