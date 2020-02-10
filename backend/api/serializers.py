@@ -18,6 +18,7 @@ class ArticleSerializer(serializers.HyperlinkedModelSerializer) :
         model  = Article
         fields = [
             'id',
+            'slug',
             'user',
             'title',
             'content',
